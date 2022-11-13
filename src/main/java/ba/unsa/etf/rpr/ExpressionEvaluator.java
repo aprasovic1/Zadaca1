@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Class ExpressionEvaluator has only one
  * method "evaluate"
- *
+ * @author aprasovic1
  */
 public class ExpressionEvaluator {
 
@@ -17,8 +17,8 @@ public class ExpressionEvaluator {
      * @return computed value of an arithmetic expression
      *
      *
-     * */
-    double evaluate(String exp) {
+     */
+    protected double evaluate(String exp) {
         Stack<String> operator = new Stack<String>();
         Stack<Double> operand = new Stack<Double>();
 

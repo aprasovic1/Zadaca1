@@ -3,7 +3,8 @@ package ba.unsa.etf.rpr;
 
 import java.util.Arrays;
 /**
- * Class App only has method
+ * Class App only has one method Main
+ * @author aprasovic1
  */
 public class App {
     /**
