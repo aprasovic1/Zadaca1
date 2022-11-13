@@ -6,7 +6,9 @@ public class App
     public static void main( String[] args )
     {
 
-        ExpressionEvaluator ex=new ExpressionEvaluator();
-       System.out.println(ex.evaluate("1"));
+        ExpressionEvaluator ex;
+        ex = new ExpressionEvaluator();
+        for(int i=0;i<args.length;i++)
+        System.out.println(args[i]);
     }
 }

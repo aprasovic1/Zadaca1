@@ -7,7 +7,7 @@ public class ExpressionEvaluator {
     double evaluate(String exp) {
         Stack<String> operator = new Stack<String>();
         Stack<Double> operand = new Stack<Double>();
-//System.out.println(exp.charAt(1));
+
 
         for (int i = 0; i < exp.length(); i++) {
             String znak ;
