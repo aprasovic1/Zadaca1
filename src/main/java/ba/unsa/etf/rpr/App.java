@@ -2,20 +2,23 @@ package ba.unsa.etf.rpr;
 
 
 import java.util.Arrays;
+
 /**
  * Class App only has one method Main
  * @author aprasovic1
  */
 public class App {
     /**
-     *  Method Main is parsing array of arithmetic operators and numbers from console, saved in String[] args,
-     *  validating it, and building a string of those operators and numbers so that each
-     *  character or operation "sqrt" is separated by a space.
+     * Method Main is parsing array of arithmetic operators and numbers from console, saved in String[] args,
+     * validating it, and building a string of those operators and numbers so that each
+     * character or operation "sqrt" is separated by a space.
+     * <p>
+     * Then it prints a computed value of given expression.
      *
-     *  Then it prints a computed value of given expression.
-     *
+     * @return
      */
     public static void main(String[] args) {
+        if(args.length<3) throw new RuntimeException("Izraz nije validan");
         String operacije = new String("+-*/");
 
         // System.out.println("'"+args[0]+"'"+args[args.length-1]+"'");
@@ -34,14 +37,22 @@ public class App {
                 } catch (NumberFormatException nfe) {
                     throw new RuntimeException("Izraz nije validan");
                 }
+
             }
 
         }
 
         StringBuilder s1 = new StringBuilder();
+int otvorene=0,zatvorene=0;
+        for (String arg : args) {
+            s1.append(arg).append(' ');
+            if(arg.equals("(")) otvorene++;
+            else if(arg.equals(")")) zatvorene++;
+        }
+        if(otvorene!=zatvorene) throw new RuntimeException("Izraz nije validan");
 
-        for (String arg : args) s1.append(arg).append(' ');
         ExpressionEvaluator ex = new ExpressionEvaluator();
         System.out.println(ex.evaluate(s1.toString()));
+
     }
 }
