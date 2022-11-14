@@ -51,6 +51,7 @@ int otvorene=0,zatvorene=0;
         }
         if(otvorene!=zatvorene) throw new RuntimeException("Izraz nije validan6");
 
+
         ExpressionEvaluator ex = new ExpressionEvaluator();
         System.out.println(ex.evaluate(s1.toString()));
 

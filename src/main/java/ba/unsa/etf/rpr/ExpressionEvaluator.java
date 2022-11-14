@@ -23,6 +23,7 @@ public class ExpressionEvaluator {
         Stack<Double> operand = new Stack<Double>();
 
 
+
         for (int i = 0; i < exp.length(); i++) {
             String znak ;
             if (exp.charAt(i) == ' ') continue;
