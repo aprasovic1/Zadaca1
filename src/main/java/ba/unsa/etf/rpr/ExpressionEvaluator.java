@@ -47,6 +47,7 @@ public class ExpressionEvaluator {
                 else if (op.equals("/")) broj = operand.pop() / broj;
                 else if (op.equals("sqrt")) broj = Math.sqrt(broj);
                 operand.push(broj);
+                if(i==exp.length()-1 && !operator.isEmpty())i-=2;
             } else operand.push(Double.parseDouble(znak));
 
         }
