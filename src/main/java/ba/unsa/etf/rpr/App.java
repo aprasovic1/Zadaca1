@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 
+import java.text.StringCharacterIterator;
 import java.util.Arrays;
 
 /**
@@ -20,7 +21,13 @@ public class App {
     public static void main(String[] args) {
        // if(args.length<3) throw new RuntimeException("Izraz nije validan1");
         String operacije = new String("+-*/");
-
+        String izraz=new String(args[0]);
+       int brOtvorenih=0,brZatvorenih=0; //zagrade
+        for(int i=0;i<izraz.length();i++){
+            if(izraz.charAt(i)=='(') brOtvorenih++;
+            else if(izraz.charAt(i)==')')brZatvorenih++;
+            System.out.println("'"+izraz.charAt(i)+"'");
+        }
         // System.out.println("'"+args[0]+"'"+args[args.length-1]+"'");
         //( sqrt ( 4 ) + ( 7 * 2.54 ) )
         if (!args[0].equals("(") || !args[args.length - 1].equals(")"))
