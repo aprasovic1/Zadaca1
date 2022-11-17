@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.Stack;
-import java.util.Scanner;
+
 
 
 /**
@@ -28,8 +28,8 @@ public class ExpressionEvaluator {
             String znak ;
             if (exp.charAt(i) == ' ') continue;
             else {
-                int razmak = exp.indexOf(' ', i);
-                znak = exp.substring(i,razmak);
+                int razmak = Math.max(exp.indexOf(' ', i),i+1) ;//Na kraju nema razmaka pa stavlja da je "razmak" na sljedecem
+                znak = exp.substring(i, razmak);                    //indeksu zbog funkcije substr
                 i=razmak;
             }
 
