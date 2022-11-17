@@ -50,7 +50,7 @@ public class App {
 
             if(znak.equals("(")) brOtvorenih++;
             else if(znak.equals(")"))brZatvorenih++;
-            System.out.println("'"+znak+"'");
+            //System.out.println("'"+znak+"'");
             prethodni=znak;
         }
 
