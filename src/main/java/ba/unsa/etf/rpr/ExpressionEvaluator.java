@@ -53,7 +53,16 @@ public class ExpressionEvaluator {
 
         }
 
-
+while(!operator.isEmpty()){
+    String op = operator.pop();
+    double broj = operand.pop();
+    if (op.equals("+")) broj = operand.pop() + broj;
+    else if (op.equals("-")) broj = operand.pop() - broj;
+    else if (op.equals("*")) broj = operand.pop() * broj;
+    else if (op.equals("/")) broj = operand.pop() / broj;
+    else if (op.equals("sqrt")) broj = Math.sqrt(broj);
+    operand.push(broj);
+}
         return operand.pop();
     }
 }
